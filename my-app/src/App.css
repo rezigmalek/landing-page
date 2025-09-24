@@ -1,0 +1,180 @@
+.nav-link-custom {
+  letter-spacing: 1px;
+}
+
+/* test forcé */
+.navbar .nav-link.nav-link-custom:hover,
+.navbar .nav-link.nav-link-custom:focus {
+  color: rgb(121, 61, 244) !important;
+}
+
+.hero-row {
+  padding-top: 80px;
+}
+
+.btn-magic {
+  position: relative;
+  padding: .35rem 1.6rem;
+  border-radius: 6px;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  overflow: hidden;
+  z-index: 0;
+  border: none;
+  width: 200px;
+  height: 40px;
+}
+
+.btn-magic::before{
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background: rgb(121, 61, 244);
+  border-radius: 10px;
+  filter: blur(3px);
+  z-index: -2;
+  transition: transform .25s ease;
+}
+
+.btn-magic::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-radius:8px;
+  z-index:-1;
+}
+
+.btn-magic:hover::before{
+  transform: scale(1.5) translateY(-1px);
+}
+
+.custom-text {
+  color: rgb(148 163 186);
+}
+
+.course-btn {
+  background-color: rgb(241 235 254) !important;
+  color: rgb(121, 61, 244);
+  font-weight: 600;
+  padding: 0.3rem 1.1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.course-btn:hover {
+  background-color: rgb(121, 61, 244) !important;
+  color: white; /* texte blanc */
+}
+
+/* Overlay sombre */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Modal centré moderne */
+.custom-modal {
+  background: #000; /* fond noir pour la vidéo */
+  border-radius: 1rem;
+  border: 2px solid rgb(121, 61, 244); /* ✅ border violet */
+  box-shadow: 0 0 30px rgba(121, 61, 244, 0.7); /* ✅ shadow violet */
+  width: 800px;
+  max-width: 95%;
+  height: 450px;
+  overflow: hidden;
+  animation: popIn 0.3s ease;
+}
+
+/* Vidéo occupe tout l’espace du modal */
+.custom-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Bouton ouverture */
+.btn-open {
+  background: linear-gradient(135deg, #6f42c1, #9b59b6);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-open:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(121, 61, 244, 0.6);
+}
+
+/* Animation d'apparition */
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Answers.css - overrides pour l'accordéon */
+
+/* === Accordéon custom === */
+
+/* Style général */
+.accordion .accordion-item {
+  border: 1px solid rgba(121, 61, 244, 0.12);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 6px 18px rgba(121, 61, 244, 0.06);
+}
+
+/* bouton fermé (par défaut, forcer en blanc) */
+.accordion .accordion-button.collapsed {
+  background-color: #fff !important;
+  color: #212529 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+/* Hover (fermé ou ouvert) */
+.accordion .accordion-button:hover {
+  background-color: rgba(121, 61, 244, 0.06);
+}
+
+/* Bouton actif (uniquement celui ouvert) */
+.accordion .accordion-button:not(.collapsed) {
+  color: #ffffff !important;
+  background-color: rgb(121, 61, 244) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Chevron/flèche devient blanc quand actif */
+.accordion .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Focus violet */
+.accordion .accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(121, 61, 244, 0.18) !important;
+  outline: none !important;
+}
+
+/* Transition d’ouverture */
+.accordion-collapse {
+  transition: height .28s ease;
+}
