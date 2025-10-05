@@ -8,19 +8,23 @@ import Questions from './components/Questions'
 import Answers from './components/Answers'
 import Instructors from './components/Instructors'
 import Talk from './components/Talk'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
-    <div className="container">
-      <Navbar />
-      <Hero />
-      <AboutUs />
-      <Courses />
-      <Answers />
-      <Instructors />
-      <Talk />
-    </div>
+    <>
+      <div className="container">
+        <Navbar />
+        <Hero />
+        <AboutUs />
+        <Courses />
+        <Answers />
+        <Instructors />
+        <Talk />
+      </div>
+      <Footer />
+    </>
   )
 }
 

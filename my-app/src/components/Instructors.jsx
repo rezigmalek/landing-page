@@ -11,7 +11,7 @@ const Instructors = () => {
             </div>
 
             <div className='row ms-5 d-flex justify-content-center'>
-                <div className='col d-flex justify-content-center align-items-center flex-column'>
+                <div className='md-col-4 col d-flex justify-content-center align-items-center flex-column me-5 my-3'>
                     <img
                         src={img}
                         className="rounded-circle"
@@ -23,7 +23,7 @@ const Instructors = () => {
                     <h6 className='custom-text'>teacher</h6>
                 </div>
 
-                <div className='col d-flex justify-content-center align-items-center flex-column'>
+                <div className='md-col-4 col d-flex justify-content-center align-items-center flex-column me-5 my-3'>
                     <img
                         src={img}
                         className="rounded-circle"
@@ -35,7 +35,7 @@ const Instructors = () => {
                     <h6 className='custom-text'>teacher</h6>
                 </div>
 
-                <div className='col d-flex justify-content-center align-items-center flex-column me-5'>
+                <div className='md-col-4 col d-flex justify-content-center align-items-center flex-column me-5 my-3'>
                     <img
                         src={img}
                         className="rounded-circle"
