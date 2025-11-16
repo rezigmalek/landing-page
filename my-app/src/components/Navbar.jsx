@@ -1,41 +1,60 @@
-import React from 'react'
-import img from '../images/MK style dz profil.jpg'
+import React from 'react';
+import img from '../images/MK style dz profil.jpg';
 
 const Navbar = () => {
   return (
-    <div className="row">
-      <nav className="navbar navbar-expand navbar-light w-100">
-        <ul className="navbar-nav me-auto d-flex align-items-center w-100">
-          {/* Logo à gauche */}
-          <li className="nav-item col-4">
-            <a className="nav-link active text-dark" href="#">
-              <img src={img} alt="profil" width={70} height={50} />
-            </a>
-          </li>
+    <nav className="navbar navbar-expand-lg navbar-light bg-white px-3">
 
-          {/* Liens du centre */}
-          <li className="nav-item col">
-            <a className="nav-link text-dark fw-bold nav-link-custom" href="#">Home</a>
-          </li>
-          <li className="nav-item col">
-            <a className="nav-link text-dark fw-bold nav-link-custom" href="#">Courses</a>
-          </li>
-          <li className="nav-item col">
-            <a className="nav-link text-dark fw-bold nav-link-custom" href="#">About Us</a>
-          </li>
-          <li className="nav-item col">
-            <a className="nav-link text-dark fw-bold nav-link-custom" href="#">Contact Us</a>
-          </li>
+        {/* Logo */}
+        <a className="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+          <img 
+            src={img} 
+            alt="profil" 
+            width={60} 
+            height={45} 
+            className="rounded-circle"
+          />
+          Althue Academy
+        </a>
 
-          {/* Bouton login à droite */}
-          <li className="nav-item col-4">
-            <a className="nav-link active text-dark text-end fw-bold" href="#">
-              Login
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        {/* Toggler (hamburger icon) */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Navbar links */}
+        <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul className="navbar-nav mb-2 mb-lg-0">
+            <li className="nav-item px-4">
+              <a className="nav-link nav-link-custom fw-bold text-dark" href="#">Home</a>
+            </li>
+            <li className="nav-item px-4">
+              <a className="nav-link nav-link-custom fw-bold text-dark" href="#">Courses</a>
+            </li>
+            <li className="nav-item px-4">
+              <a className="nav-link nav-link-custom fw-bold text-dark" href="#">About Us</a>
+            </li>
+            <li className="nav-item px-4">
+              <a className="nav-link nav-link-custom fw-bold text-dark" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Login button */}
+        <div className="d-none d-lg-block">
+          <a className="btn btn-outline-dark fw-bold" href="#">
+            Login
+          </a>
+        </div>
+    </nav>
   );
 };
 

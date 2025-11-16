@@ -3,14 +3,25 @@ import img from '../images/img-1.jpg'
 import start from '../images/start.png'
 import { VscDebugStart } from "react-icons/vsc";
 import { useState } from 'react';
+import { motion } from 'framer-motion'
 
 const Answers = () => {
+    const [open, setOpen] = useState(false);
 
-const [open, setOpen] = useState(false);
+    const leftColumnVariants = {
+        hidden: { opacity: 0, x: -120, scale: 0.92 },
+        visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 2.2, ease: 'easeOut', type: 'spring', stiffness: 60, damping: 18 } },
+    }
+
+    const rightColumnVariants = {
+        hidden: { opacity: 0, x: 120, scale: 0.92 },
+        visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 2.2, ease: 'easeOut', type: 'spring', stiffness: 60, damping: 18 } },
+    }
+
     return (
         <div className="row py-5 my-5">
-            <div className="col-6">
-                <div className="card position-relative" style={{ width: "39rem" }}>
+            <motion.div className="col-12 col-md-6" variants={leftColumnVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+                <div className="card position-relative" style={{ maxWidth: "39rem" }}>
                     {/* Image principale */}
                     <img src={img} className="card-img-top" alt="Main" />
 
@@ -44,11 +55,11 @@ const [open, setOpen] = useState(false);
                         </div>
                     )}
                 </div>
-            </div>
+            </motion.div>
 
 
-            <div className="col-6 d-flex flex-column justify-content-center">
-                <h1 className="fw-bold">Questions & Answers</h1>
+            <motion.div className="col-12 col-md-6 mt-2 d-flex flex-column justify-content-center" variants={rightColumnVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+                <h1 className="fw-bold text-center mt-2">Questions & Answers</h1>
                 <h6 className="custom-text py-3">
                     Discover a world of knowledge and opportunities with our online
                     education platform pursue a new career.
@@ -159,7 +170,7 @@ const [open, setOpen] = useState(false);
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }
